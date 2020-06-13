@@ -1,0 +1,51 @@
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+#include <iostream>
+#include<string>
+#include<map>
+#include<queue>
+#include<algorithm>
+#include <cstdio> 
+#include <string> 
+#include <vector> 
+#include<bits/stdc++.h>
+#include<queue>
+using namespace std;
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+//#define test ll t;cin >> t;while(t--)
+#define ll long long int
+#define  sll stack<ll>
+#define  qll queue<ll>
+#define  pll pair<ll,ll>
+#define  vll vector<ll>
+#define  vpi vector<pair<int,int>>
+#define pb push_back
+#define ppb pop_back
+#define ln "\n"
+#define fabl(i,a,b) for(i=a;i<b;i++)
+#define fabe(i,a,b) for(i=a;i<=b;i++)
+#define fre(i,a,b) for(i=b;i>=a;i--)
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+void solve(){
+    ll x,m,n,i,j,l,L,r,R,a,b;
+    cin >> n >> x >> m;
+    l=x,r=x;
+    for(i=0;i<m;i++){
+        cin >> L >> R;
+        if(max(l,L) <= min(r,R)){
+            l= min(l,L);
+            r=max(r,R);
+        }
+    }
+    cout << r-l+1 << ln;
+}
+
+int main(){
+    fastio ll t; cin >> t;
+    while(t--)
+        solve();
+    return 0;
+}
