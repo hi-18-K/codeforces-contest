@@ -1,0 +1,42 @@
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+#include <iostream>
+#include<string>
+#include<map>
+#include<queue>
+#include<algorithm>
+#include <cstdio> 
+#include <string> 
+#include <vector> 
+#include<bits/stdc++.h>
+#include<queue>
+using namespace std;
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+//#define test ll t;cin >> t;while(t--)
+#define ll long long int
+#define  sll stack<ll>
+#define  qll queue<ll>
+#define  pll pair<ll,ll>
+#define  vll vector<ll>
+#define  vpi vector<pair<int,int>>
+#define f first
+#define s second
+#define mp make_pair
+#define pb push_back
+#define ppb pop_back
+#define ln "\n"
+ 
+int main() {
+  ios_base::sync_with_stdio(0);
+  ll t;
+  cin >> t;
+  
+  while(t--){
+      ll a,b,ans;
+      cin >> a >> b;
+      ans = (a+b)/3;
+      ans = min(ans, a); ans = min(ans, b);
+      cout << ans << ln;
+  }
+  return 0;
+}
