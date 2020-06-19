@@ -25,7 +25,7 @@ using namespace std;
 # include <string> 
 # include <vector> 
 
-ll n,fq[10];
+ll n,fq[10];                    //given atleast k codeforces subsequences must be present!! 
 string ans="codeforces";
 void solve(){
     ll i,j,x,y,z=1;
