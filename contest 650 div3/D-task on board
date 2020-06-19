@@ -1,0 +1,79 @@
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+#include <iostream>
+#include<string>
+#include<map>
+#include<queue>
+#include<algorithm>
+using namespace std;
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define ll long long 
+#define  sll stack<ll>
+#define  qll queue<ll>
+#define  pll pair<ll,ll>
+#define  vll vector<ll>
+#define  vpi vector<pair<int,int>>
+#define f first
+#define s second
+#define pb push_back
+#define ppb pop_back
+#define ln "\n"
+#define fab(i,a,b) for(i=a;i<b;i++)
+#define fabe(i,a,b) for(i=a;i<=b;i++)
+#define fre(i,a,b) for(i=b;i>=a;i--)
+# include <cstdio> 
+# include <string> 
+# include <vector> 
+
+void solve(){
+    ll fq[26]={0};
+    string s;
+    cin >> s;
+    for(ll i=0;i<s.size();i++){
+        fq[(s[i]-'a')]++;
+    }
+    ll n,i,j,x,y,fq_itr=25,ans_size=0;
+    cin >> n; 
+    //cout << n << "!";
+    ll b[n],c[n];
+    for(i=0;i<n;i++){
+        cin >> b[i]; c[i]=b[i];
+    }
+    char t[n]; fq_itr=25;
+    //cout << n << ",";
+    while(1){
+        vll pos;
+        for(i=0;i<n;i++) c[i]=b[i];
+        
+        for(i=0;i<n;i++){
+            if(b[i]==0){
+                c[i]=-1;
+                pos.pb(i);
+                for(j=0;j<n;j++){
+                    if(c[j]==-1 || c[j]==0) continue;
+                    c[j]= c[j]-(abs(i-j));
+                }
+            }
+        }
+        if(pos.size()==0) break;
+        for(i=0;i<n;i++) b[i]=c[i];
+        
+        ll sz=pos.size();
+        while(fq[fq_itr] < sz){
+            fq_itr--;
+        }
+        for(i=0;i<pos.size();i++){
+            t[pos[i]] = (fq_itr+'a');
+        }
+        fq[fq_itr]=0;  pos.clear();
+    }
+    //cout << n << "    ";
+    for(i=0;i<n;i++) cout  << t[i] ;
+    cout << ln;
+    s.clear();
+}
+int main(){
+    fastio ll t; cin >> t; while(t--)
+    solve();
+    return 0;
+}
