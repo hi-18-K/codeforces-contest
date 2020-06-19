@@ -1,0 +1,60 @@
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+#include <iostream>
+#include<string>
+#include<map>
+#include<queue>
+#include<algorithm>
+using namespace std;
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define ll long long 
+#define  sll stack<ll>
+#define  qll queue<ll>
+#define  pll pair<ll,ll>
+#define  vll vector<ll>
+#define  vpi vector<pair<int,int>>
+#define f first
+#define s second
+#define pb push_back
+#define ppb pop_back
+#define ln "\n"
+#define fab(i,a,b) for(i=a;i<b;i++)
+#define fabe(i,a,b) for(i=a;i<=b;i++)
+#define fre(i,a,b) for(i=b;i>=a;i--)
+# include <cstdio> 
+# include <string> 
+# include <vector> 
+
+void solve(){
+    ll n,i,j,x,y,maxm,sum=0;
+    cin >> n;
+    vector<ll> v(n,0), bits(21,0);
+    fab(i,0,n) cin >> v[i];
+    for(i=0;i<n;i++){
+        for(j=0;j<21;j++){
+            bits[j]+=(v[i]&1);
+            v[i]=(v[i]>>1LL);
+        }
+    }
+    ll ans=0;
+    for(i=0;i<21;i++){
+        for(j=0;j<n;j++){
+            if(bits[i]>0){
+                v[j] = (v[j]|(1LL<<i));
+                bits[i]--;
+            }
+            else {
+                break;
+            }
+        }
+    }
+    for(i=0;i<n;i++){
+        ans+=(v[i]*v[i]);
+    }
+    cout << ans << ln;
+}
+int main(){
+    fastio //ll t; cin >> t; while(t--)
+    solve();
+    return 0;
+}
