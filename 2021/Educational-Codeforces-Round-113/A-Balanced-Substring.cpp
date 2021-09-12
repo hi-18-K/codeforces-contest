@@ -1,3 +1,7 @@
+// https://codeforces.com/contest/1569/problem/a
+// implementation
+// ~(900-1100)
+
 #include<bits/stdc++.h>
 using namespace std;
 #define fastio 			ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
@@ -5,23 +9,6 @@ using namespace std;
 #define pll 			pair<ll,ll>
 #define vll 			vector<ll>
 #define vs 				vector<string>
-#define ff 				first
-#define ss 				second
-#define all(x) 			x.begin(),x.end()
-#define pb 				push_back
-#define ppb 			pop_back
-#define ln 				cout << "\n" ;
-#define maxHeapll 		priority_queue<ll>
-#define minHeapll 		priority_queue <ll, vector<ll>, greater<ll> > 
-#define ps(x,y)         fixed << setprecision(y) << x
-#define fill(a,b)       memset(a, b, sizeof(a))
-
-/*************************    	 CONSTANTS 		******************************/
-#define mod 			1000000007
-#define inf 			1e18
-#define yes "YES"
-#define no "NO"
-
 
 void solve(){
     int n;
