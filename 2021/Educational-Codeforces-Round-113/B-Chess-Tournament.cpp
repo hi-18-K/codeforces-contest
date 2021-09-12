@@ -1,3 +1,7 @@
+// https://codeforces.com/contest/1569/problem/b
+// constructive algo
+// ~(1200-1400)
+
 #include<bits/stdc++.h>
 using namespace std;
 #define fastio 			ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
